@@ -27,13 +27,13 @@ const [favouritesFlowers, setFavouritesFlowers] = useState(getFavourites());
   
   }
   
-  
   function deleteFavourite(fav){
     console.log("kustuta lemmik");
-    const index = favouritesFlowers.indexOf(fav);
-    favouritesFlowers.splice(index,1);
-    setFavouritesFlowers(favouritesFlowers.slice());
-    sessionStorage.setItem("favourites",JSON.stringify(favouritesFlowers));
+    let favourites = favouritesFlowers.slice();
+    const index = favourites.indexOf(fav);
+    favourites.splice(index,1);
+    setFavouritesFlowers(favourites);
+    sessionStorage.setItem("favourites",JSON.stringify(favourites));
     
   }
     return (
@@ -43,8 +43,8 @@ const [favouritesFlowers, setFavouritesFlowers] = useState(getFavourites());
      {getFavourites().map(flower => <div>
       <h6>{flower.nimetus}</h6> 
      <img src={flower.pilt} alt=""/> <br />
-     <button onClick={deleteFavourite}> Kustuta</button><br /><br />
-     {/* <button onClick={() => deleteFavourite(fav)}> Kustuta</button><br /><br /> */}
+     {/* <button onClick={deleteFavourite}> Kustuta</button><br /><br /> */}
+     <button onClick={() => deleteFavourite(fav)}> Kustuta</button><br /><br />
      </div>)}
      </div>
     Suundu poodi....
