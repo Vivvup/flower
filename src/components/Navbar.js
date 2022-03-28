@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import SearchBar from "../components/SearchBar";
 
 function Navbar() {
     return (
@@ -13,8 +14,11 @@ function Navbar() {
        <Link to='/lemmikud'>
             <button>Lemmikud <img src="/heart.png"/></button>
        </Link>
-       <input type="text" placeholder="otsi nimetuse järgi"/>
-       <button>OTSI <img src="/search.png"/></button>
+       <SearchBar />
+
+{/*        
+      <input type="text" placeholder="otsi nimetuse järgi"/>
+       <button>OTSI <img src="/search.png"/></button>  */}
        
     </div>);
 }
