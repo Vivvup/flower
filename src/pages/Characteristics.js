@@ -1,9 +1,10 @@
 import Navbar from "../components/Navbar";
 import { useState } from 'react';
 import { MultiSelect } from "react-multi-select-component";
+import { useTranslation } from "react-i18next";
 
 function Characteristics () {
-
+  const { t, i18n } = useTranslation();
 
     const [selected, setSelected] = useState([]);
     const [selected1, setSelected1] = useState([]);
@@ -55,31 +56,42 @@ function Characteristics () {
         { label: "olemas", value: "olemas" },
         { label: "pole", value: "pole" },
       ];
-      const minuTolked = [{
-        allItemsAreSelected: "Kõik on valitud.",
-        clearSearch: "Tühjenda otsing",
-        noOptions: "Pole valikuid",
-        search: "Otsi",
-        selectAll: "Vali kõik",
-        selectSomeItems: "Vali..."
-      }];
+      // const minuTolked = [{
+      //   allItemsAreSelected: "Kõik on valitud.",
+      //   clearSearch: "Tühjenda otsing",
+      //   noOptions: "Pole valikuid",
+      //   search: "Otsi",
+      //   selectAll: "Vali kõik",
+      //   selectSomeItems: "Vali..."
+      // }];
      
+     
+      // Array.from(document.getElementsByClassName("dropdown-heading-value")).forEach(element => {
+      //   element.textContent = "Vali";
+      // });
+      // document.getElementsByClassName("dropdown-heading-value")[0].textContent = "Vali";
+    //   function changeLang(language) {
+    //     i18n.changeLanguage(language);
+    //     localStorage.setItem("language",language);
+    // }
+
     return (
     <div>
     <Navbar />
+    {/* <button onClick= {() => changeLang ('en')}>EN</button> 
+    <button onClick= {() => changeLang('ee')}>EE</button>  */}
     <div className="rmsc">
       <h3>Vali taime omadused</h3>
       {/* <pre>{JSON.stringify(selected)}</pre> */}
       <label>Taimegrupp</label>
-      <MultiSelect  overrideStrings ={minuTolked}
-        // selectAllLabel="Vali kõik"
+      <MultiSelect  
         disableSearch="true"
         options={taimegrupp}
         value={selected}
         onChange={setSelected}
-        // selectSomeItems="Vali..."
+        selectSomeItems={t("selectSomeItems")}
         // selectAll="Vali kõik"
-        labelledBy="Vali" 
+        // labelledBy={t("vali")}
       />
       <label>Õitsemisaeg</label>
       {/* <pre>{JSON.stringify(selected1)}</pre> */}

@@ -15,7 +15,10 @@ const [favouritesFlowers, setFavouritesFlowers] = useState(getFavourites());
   
   function deleteFavourite(fav){
     let favourites = favouritesFlowers.slice();
-    const index = favouritesFlowers.findIndex(element => element.favoriteFlower.id === fav.id);
+    console.log(favourites);
+    console.log(fav.favoriteFlower);
+    const index = favouritesFlowers.findIndex(element => element.favoriteFlower.id === fav.favoriteFlower.id);
+    console.log(index);
     favourites.splice(index,1);
     setFavouritesFlowers(favourites);
     sessionStorage.setItem("favourites",JSON.stringify(favourites));
