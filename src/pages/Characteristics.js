@@ -153,7 +153,7 @@ function Characteristics() {
             selected5.map(item => item.label).includes(item.korgus) ||
             selected6.map(item => item.label).includes(item.kulmataluvus)
           ) { */}
-          {Data.map(item => {
+          {/* {Data.map(item => {
           <div>{item.label}</div>
           if (
             !(selected.length === 0 && selected1.length === 0 && selected2.length === 0 && selected3.length === 0 && selected4.length === 0 && selected5.length === 0 && selected6.length === 0) &&
@@ -164,6 +164,18 @@ function Characteristics() {
             (selected4.map(selected => selected.label).length === 0 || selected4.map(selected => selected.label).includes(item.valgus)) &&
             (selected5.map(selected => selected.label).length === 0 || selected5.map(selected => selected.label).includes(item.korgus)) &&
             (selected6.map(selected => selected.label).length === 0 || selected6.map(selected => selected.label).includes(item.kulmataluvus))
+          ) { */}
+            {Data.map(item => {
+          <div>{item.label}</div>
+          if (
+            !(selected.length === 0 && selected1.length === 0 && selected2.length === 0 && selected3.length === 0 && selected4.length === 0 && selected5.length === 0 && selected6.length === 0) &&
+            (selected.map(selected => selected.label).length === 0 || selected.map(selected => selected.label).includes(item.taimegrupp)) &&
+            (selected1.map(selected => selected.label).length === 0 || selected1.map(selected => selected.label).some(value => item.oitsemisaeg.includes(value))) &&
+            (selected2.map(selected => selected.label).length === 0 || selected2.map(selected => selected.label).some(value => item.varvid.includes(value))) &&
+            (selected3.map(selected => selected.label).length === 0 || selected3.map(selected => selected.label).some(value => item.kastmine.includes(value))) &&
+            (selected4.map(selected => selected.label).length === 0 || selected4.map(selected => selected.label).some(value => item.valgus.includes(value))) &&
+            (selected5.map(selected => selected.label).length === 0 || selected5.map(selected => selected.label).includes(item.korgus)) &&
+            (selected6.map(selected => selected.label).length === 0 || selected6.map(selected => selected.label).includes(item.kulmataluvus))
           ) {
             return (
               <div key={item.id}>
@@ -171,7 +183,8 @@ function Characteristics() {
                 <img src={item.pilt} alt="" />
 
                 <p>Õitsemisaeg: {item.oitsemisaeg}</p>
-                <p>Värvid: {item.varvid}</p>
+                <p>Värvid: {item.varvid} </p>
+                {/* <p>Värvid: {item.varvid.join(', ')} </p> */}
                 <p>Kastmine: {item.kastmine}</p>
                 <p>Valgus: {item.valgus}</p>
                 <p>Kõrgus: {item.korgus}</p>

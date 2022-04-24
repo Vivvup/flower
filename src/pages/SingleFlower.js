@@ -39,7 +39,7 @@ function SingleFlower(){
             <div> Õitsemisaeg: {taim.oitsemisaeg}</div>
             <div> Külmataluvus: {taim.kulmataluvus}</div>
             <div> Kastmine: {taim.kastmine}</div>
-            <div> Valgus: {taim.valgus}</div>
+            <div> Valgus: {taim.valgus} </div>
             <div> kõrgus: {taim.korgus}</div>
             <div> Värvid: {taim.varvid}</div><br/>
             <img src={taim.pilt} alt="" /><br/>  
