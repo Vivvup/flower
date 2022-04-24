@@ -24,6 +24,7 @@ const [favouritesFlowers, setFavouritesFlowers] = useState(getFavourites());
     sessionStorage.setItem("favourites",JSON.stringify(favourites));
     
   }
+  
     return (
     <div >
       <Navbar />  

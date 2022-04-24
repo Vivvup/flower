@@ -24,14 +24,23 @@ function Characteristics() {
     { label: "hilissuvi", value: "hilissuvi" },
     { label: "sügis", value: "sygis" },
   ];
+  // const varvid = [
+  //   { label: "🔴", value: "punane" },
+  //   { label: "🔵", value: "sinine" },
+  //   { label: "🟢", value: "roheline" },
+  //   { label: "🟡", value: "kollane" },
+  //   { label: "🟣", value: "lilla" },
+  //   { label: "⚪", value: "valge" },
+  //   { label: "⚫", value: "must" },
+  // ];
   const varvid = [
-    { label: "🔴", value: "red" },
-    { label: "🔵", value: "blue" },
-    { label: "🟢", value: "green" },
-    { label: "🟡", value: "yellow" },
-    { label: "🟣", value: "purple" },
-    { label: "⚪", value: "white" },
-    { label: "⚫", value: "black" },
+    { label: "punane", value: "punane" },
+    { label: "sinine", value: "sinine" },
+    { label: "roheline", value: "roheline" },
+    { label: "kollane", value: "kollane" },
+    { label: "lilla", value: "lilla" },
+    { label: "valge", value: "valge" },
+    { label: "must", value: "must" },
   ];
 
   const kastmine = [
@@ -135,7 +144,7 @@ function Characteristics() {
         Kõrgus: {selected5.map(item => item.label).join(', ')}
         Külmataluvus: {selected6.map(item => item.label).join(', ')} */}
 
-        {Data.map(item => {
+        {/* {Data.map(item => {
           if (selected.map(item => item.label).includes(item.taimegrupp) ||
             selected1.map(item => item.label).includes(item.oitsemisaeg) ||
             selected2.map(item => item.label).includes(item.varvid) ||
@@ -143,6 +152,18 @@ function Characteristics() {
             selected4.map(item => item.label).includes(item.valgus) ||
             selected5.map(item => item.label).includes(item.korgus) ||
             selected6.map(item => item.label).includes(item.kulmataluvus)
+          ) { */}
+          {Data.map(item => {
+          <div>{item.label}</div>
+          if (
+            !(selected.length === 0 && selected1.length === 0 && selected2.length === 0 && selected3.length === 0 && selected4.length === 0 && selected5.length === 0 && selected6.length === 0) &&
+            (selected.map(selected => selected.label).length === 0 || selected.map(selected => selected.label).includes(item.taimegrupp)) &&
+            (selected1.map(selected => selected.label).length === 0 || selected1.map(selected => selected.label).includes(item.oitsemisaeg)) &&
+            (selected2.map(selected => selected.label).length === 0 || selected2.map(selected => selected.label).includes(item.varvid)) &&
+            (selected3.map(selected => selected.label).length === 0 || selected3.map(selected => selected.label).includes(item.kastmine)) &&
+            (selected4.map(selected => selected.label).length === 0 || selected4.map(selected => selected.label).includes(item.valgus)) &&
+            (selected5.map(selected => selected.label).length === 0 || selected5.map(selected => selected.label).includes(item.korgus)) &&
+            (selected6.map(selected => selected.label).length === 0 || selected6.map(selected => selected.label).includes(item.kulmataluvus))
           ) {
             return (
               <div key={item.id}>
@@ -155,6 +176,8 @@ function Characteristics() {
                 <p>Valgus: {item.valgus}</p>
                 <p>Kõrgus: {item.korgus}</p>
                 <p>Külmataluvus: {item.kulmataluvus}</p>
+              
+    
               </div>
             )
           }
