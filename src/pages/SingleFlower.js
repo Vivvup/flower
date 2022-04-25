@@ -36,12 +36,12 @@ function SingleFlower(){
          <div className="singleFlower">
             <div> Nimetus: {taim.nimetus}</div>
             <div> Taimegrupp: {taim.taimegrupp}</div>
-            <div> Õitsemisaeg: {taim.oitsemisaeg}</div>
-            <div> Külmataluvus: {taim.kulmataluvus}</div>
-            <div> Kastmine: {taim.kastmine}</div>
-            <div> Valgus: {taim.valgus} </div>
-            <div> kõrgus: {taim.korgus}</div>
-            <div> Värvid: {taim.varvid}</div><br/>
+            <div> Õitsemisaeg: {taim.oitsemisaeg.toString()}</div>
+            <div> Külmataluvus: {taim.kulmataluvus.toString()}</div>
+            <div> Kastmine: {taim.kastmine.toString()}</div>
+            <div> Valgus: {taim.valgus.toString()} </div>
+            <div> kõrgus: {taim.korgus.toString()}</div>
+            <div> Värvid: {taim.varvid.toString()}</div><br/>
             <img src={taim.pilt} alt="" /><br/>  
             <button type="submit" onClick={()=> {
                 addFavorite (taim);

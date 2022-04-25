@@ -178,17 +178,16 @@ function Characteristics() {
             (selected6.map(selected => selected.label).length === 0 || selected6.map(selected => selected.label).includes(item.kulmataluvus))
           ) {
             return (
-              <div key={item.id}>
+              <div className="characteristics" key={item.id}>
                 <h3>{item.nimetus}</h3>
                 <img src={item.pilt} alt="" />
 
-                <p>Õitsemisaeg: {item.oitsemisaeg}</p>
-                <p>Värvid: {item.varvid} </p>
-                {/* <p>Värvid: {item.varvid.join(', ')} </p> */}
-                <p>Kastmine: {item.kastmine}</p>
-                <p>Valgus: {item.valgus}</p>
-                <p>Kõrgus: {item.korgus}</p>
-                <p>Külmataluvus: {item.kulmataluvus}</p>
+                <p>Õitsemisaeg: {item.oitsemisaeg.toString()}</p>
+                <p>Värvid: {item.varvid.toString()} </p>
+                <p>Kastmine: {item.kastmine.toString()}</p>
+                <p>Valgus: {item.valgus.toString()}</p>
+                <p>Kõrgus: {item.korgus.toString()}</p>
+                <p>Külmataluvus: {item.kulmataluvus.toString()}</p>
               
     
               </div>

@@ -19,7 +19,7 @@ return (
       } 
     }).map((flower, index) => (
       <div key={index}>
-        <Link to={"/taim/" + flower.id}>
+        <Link to={"/taim/" + flower.id} onClick={() => {window.location.href = "/taim/" + flower.id}}>
         {flower.nimetus} &nbsp;
         </Link>
       </div>
